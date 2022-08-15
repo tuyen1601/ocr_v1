@@ -146,7 +146,8 @@ def run():
     image_dir = args.image_dir
     if '.pdf' in image_dir:
         print('pdf----')
-        images = convert_from_path(image_dir, poppler_path=r'/home/tuyen/Desktop/Project/OCR/OCR/poppler-0.68.0/bin')
+        # images = convert_from_path(image_dir, poppler_path='/home/tuyen/Desktop/Project/OCR/OCR/poppler-0.68.0/bin') #windows
+        images = convert_from_path(image_dir)
         for i in range(len(images)):
             images[i].save('./pdf_image/page_' + str(i+1) + '.jpg', 'JPEG')
         image_file_list = utility.get_image_file_list('./pdf_image')
